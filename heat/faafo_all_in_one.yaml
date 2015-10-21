@@ -31,7 +31,7 @@ parameters:
   faafo_source:
     type: string
     description: The http location of the faafo application install script
-    default: https://raw.githubusercontent.com/openstack/faafo/master/contrib/install.sh
+    default: https://raw.githubusercontent.com/MartinPaulo/son_of_faafo/master/contrib/install.sh
 
 resources:
 

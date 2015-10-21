@@ -3,4 +3,4 @@ parameters:
   key_name: nectar_dev
   instance_type: m2.xsmall
   image_id: 778e7b2e-4e67-44eb-9565-9c920e236dfd
-  faafo_source: https://raw.githubusercontent.com/MartinPaulo/son_of_faafo/master/contrib/install.sh
+  faafo_source: https://raw.githubusercontent.com/openstack/faafo/master/contrib/install.sh
