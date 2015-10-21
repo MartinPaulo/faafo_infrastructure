@@ -24,6 +24,7 @@ parameters:
   image_id:
     type: string
     description: ID of the image to use for the instance to be created
+    default: 778e7b2e-4e67-44eb-9565-9c920e236dfd
     constraints:
       - custom_constraint: glance.image
         description: Must be a valid image on your cloud
