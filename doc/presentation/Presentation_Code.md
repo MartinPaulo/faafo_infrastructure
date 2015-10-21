@@ -87,7 +87,7 @@ The entire team can be fed by two large Pizza's
 * More support
 * Application speed
 * Decentralized data
-* Lock you into integration choices (refactoring)
+* Lock you into integration choices (e.g.: refactoring)
 * More points of failure
 
 -- *Slide End* --
@@ -157,6 +157,7 @@ ssh -i <key> ubuntu@<IP>
 
 ```bash
 sudo -i
+cd faafo_infrastructure/src/
 cp faafo.cfg.template faafo.cfg
 nano faafo.cfg
 ```
