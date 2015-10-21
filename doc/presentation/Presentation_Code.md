@@ -122,8 +122,8 @@ http://developer.openstack.org/firstapp-libcloud/
 
 So use your checklists to launch the VM!
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -148,8 +148,8 @@ git clone https://github.com/MartinPaulo/faafo_infrastructure.git
 ssh -i <key> ubuntu@<IP>
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide* --
 
@@ -162,8 +162,8 @@ cp faafo.cfg.template faafo.cfg
 nano faafo.cfg
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -187,8 +187,8 @@ worker-2 = mp_w2
 worker-3 = mp_w3
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 
 -- *Slide End* --
@@ -201,8 +201,8 @@ worker-3 = mp_w3
 python chapter1.py 
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -228,8 +228,8 @@ ssh -i <key> ubuntu@<IP>
 
 PS: From your local machine!
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -286,8 +286,8 @@ python teardown.py
 python chapter2.py 
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -313,8 +313,8 @@ From your local machine!
 ssh -i <key> ubuntu@<IP>
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -327,8 +327,8 @@ python teardown.py
 python chapter3.py 
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -354,8 +354,8 @@ From your local machine!
 ssh -i <key> ubuntu@<IP>
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
@@ -367,8 +367,8 @@ ssh -i <key> ubuntu@<IP>
 python teardown.py
 ```
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 
