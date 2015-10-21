@@ -63,17 +63,6 @@ But **Promising**
 -- *Slide End* --
 -- *Slide* --
 
-## NeCTAR sample templates
-
-https://github.com/NeCTAR-RC/heat-templates
-
-Lists the supported resources,
- 
-with links to sample templates
-
--- *Slide End* --
--- *Slide* --
-
 ## NeCTAR documentation
 
 http://tinyurl.com/heat-docs
@@ -94,7 +83,28 @@ The stacks tab.
 -- *Slide End* --
 -- *Slide* --
 
+## NeCTAR sample templates
+
+https://github.com/NeCTAR-RC/heat-templates
+
+Lists the supported resources,
+ 
+with links to sample templates
+
+-- *Slide End* --
+-- *Slide* --
+
+## A walk through
+
+`heat-templates/juno/single_instance_with_cinder_volume.yaml`
+
+-- *Slide End* --
+
+-- *Slide* --
+
 ## Lets give it a go...
+
+From: http://tinyurl.com/os-heat-rs
 
 ```
 heat_template_version: 2014-10-16
@@ -109,16 +119,16 @@ resources:
 
 When loading, use your initials in the template name: eg: `mp_random`
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
 
 ## Delete your template
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
@@ -132,16 +142,16 @@ http://docs.openstack.org/developer/heat/template_guide/hot_spec.html
       
 Then add the `value` output...
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
 
 ## Delete your template
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
@@ -154,16 +164,16 @@ http://docs.openstack.org/developer/heat/template_guide/hot_spec.html
 
 Then add a `length` parameter.
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
 
 ## Delete your template
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
@@ -176,16 +186,16 @@ http://docs.openstack.org/developer/heat/template_guide/hot_spec.html
 
 Then constrain the input to 10-12 chars...
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
 
 ## Delete your template
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
 -- *Slide End* --
 -- *Slide* --
@@ -194,18 +204,70 @@ Then constrain the input to 10-12 chars...
 
 Remember faafo? Now for the all in one...
 
+* http://tinyurl.com/faafo-all-in-one
+
+PS: An environment file...
+
 -- *Slide End* --
 -- *Slide* --
 
+## But all that typing?
+
+Create an `environment.yaml`!
+
+```yaml
+parameters:
+  # Add your desired defaults here...
+  key_name: nectar_dev
+```
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
+
 -- *Slide End* --
-
-
 -- *Slide* --
 
-# Title
+## Delete your template
 
-* <span style="color:red">&#9632;</style> = help me!
-* <span style="color:green">&#9632;</style> = I'm ready to move on...
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
 
+-- *Slide End* --
+-- *Slide* --
+
+## The journey
+
+* http://tinyurl.com/faafo-exploded
+* http://tinyurl.com/faafo-autoscaling-workers
+
+-- *Slide End* --
+-- *Slide* --
+
+## The destination
+
+* http://tinyurl.com/faafo-autoscaling
+
+(Double up?)
+
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
+
+-- *Slide End* --
+-- *Slide* --
+
+# For the last time...
+
+Delete your template!
+
+* <span style="color:red">&#9632;</span> = help me!
+* <span style="color:green">&#9632;</span> = I'm ready to move on...
+
+-- *Slide End* --
+-- *Slide* --
+
+# Conclusion
+
+I <span style="color:red">&#x2764;</span> Heat. 
+
+You should, as well...
 
 -- *Slide End* --
