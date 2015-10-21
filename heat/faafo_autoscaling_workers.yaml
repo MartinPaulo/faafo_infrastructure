@@ -68,28 +68,6 @@ resources:
           ToPort: "22"
           CidrIp: "0.0.0.0/0"
 
-  controller:
-    type: "AWS::EC2::SecurityGroup"
-    properties:
-      GroupDescription: "For services that run on a worker node"
-      SecurityGroupIngress:
-        -
-          IpProtocol: "tcp"
-          FromPort: "80"
-          ToPort: "80"
-          CidrIp: "0.0.0.0/0"
-        -
-          IpProtocol: "tcp"
-          FromPort: "22"
-          ToPort: "22"
-          CidrIp: "0.0.0.0/0"
-        -
-          IpProtocol: "tcp"
-          FromPort: "5672"
-          ToPort: "5672"
-          CidrIp: "0.0.0.0/0"
-          # SourceSecurityGroupName: { get_resource: worker }
-
   services:
     type: "AWS::EC2::SecurityGroup"
     properties:
