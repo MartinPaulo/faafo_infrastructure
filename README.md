@@ -27,6 +27,22 @@ this case it just shouldn't bother with creating an IP in the pool of floating I
 
 So I've modified it: [chapter1.py](src/chapter1.py)
 
+I've also extracted the connection information into a config file so that connection information isn't checked into
+the code repository. To get going: 
+
+```bash
+cd src/
+cp faafo.cfg.template faafo.cfg
+nano faafo.cfg
+```
+
+And add the appropriate values. Each of the chapters requires instance names to be added. This is so that a lot
+of different people can run the programs in a common tenancy without becoming confused by name clashes.
+
+Once you are done, there is a script to tear down all the infrastructure built by a given user:
+
+[teardown.py](src/teardown.py)
+
 ## Chapter 2: Introduction to the fractals application architecture
 
 I removed some of the boilerplate from Chapter 1 and introduces a method to allocate the IP number.
@@ -60,8 +76,8 @@ The html presentations are simply generated from the markdown documents above.
 
 ## Wait, there's more
 
-* [Some notes on running on the NeCTAR cloud](doc/presentation/docs/HowToDebugAFailedInstance.pdf)
-* [Some notes on how to dubug and instance](doc/presentation/docs/NotesOnTheNectarCloud.pdf)
+* [Some notes on running on the NeCTAR cloud](doc/presentation/docs/NotesOnTheNectarCloud.pdf)
+* [Some notes on how to debug and instance](doc/presentation/docs/HowToDebugAFailedInstance.pdf)
 
 ## In general
 
