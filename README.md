@@ -7,16 +7,13 @@ The first app's code lives here:
 
 * https://github.com/stackforge/faafo
 
-The documentation about getting it up and going on OpenStack is here:
+The documentation describing it is here:
 
 * http://developer.openstack.org/firstapp-libcloud/getting_started.html
 
-The source for the previous documentation:
+The source for the documentation is at:
 
 * https://github.com/openstack/api-site/tree/master/firstapp
-
-Netflix have an interesting article on architecture here:
-https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/
 
 # Notes
 
@@ -50,6 +47,21 @@ I've added four templates so far:
 * [faafo_exploded.yaml](heat/faafo_exploded.yaml): a straight port of chapter 3's code.
 * [faafo_autoscaling_workers.yaml](heat/faafo_autoscaling_workers.yaml): the workers are now part of an autoscaling group.
 * [faafo_exploded.yaml](heat/faafo_exploded.yaml): both the workers and the api now autoscale.
+
+## The Presentations
+
+The presentations can be found here:
+
+* [ResBaz introduction](doc/presentation/Presentation_RezBaz.md)
+* [FAAFO introduction](doc/presentation/Presentation_Code.md)
+* [Heat introduction](doc/presentation/Presentation_Heat.md)
+
+The html presentations are simply generated from the markdown documents above.
+
+## Wait, there's more
+
+* [Some notes on running on the NeCTAR cloud](doc/presentation/docs/HowToDebugAFailedInstance.pdf)
+* [Some notes on how to dubug and instance](doc/presentation/docs/NotesOnTheNectarCloud.pdf)
 
 ## In general
 
@@ -94,12 +106,7 @@ if your api servers have a load balancer in front of them it works well.
 When you start up and delete workers, the queue might take a while to regroup. But it eventually does: and you get
 your images...
 
-### MySql column size wrong
+## Links
 
-Reported:
-
-https://bugs.launchpad.net/faafo/+bug/1496687 
-
-And submitted a fix submitted that has now been deployed into FAAFO proper.
-
-
+Netflix have an interesting article on architecture here:
+https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/
