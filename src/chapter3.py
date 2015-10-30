@@ -105,7 +105,7 @@ def launch_instance(instance_name, userdata, security_group):
                               size=flavor,
                               ex_keyname=keypair_name,
                               ex_userdata=userdata,
-                              # ex_availability_zone='NCI',
+                              ex_availability_zone='melbourne',
                               ex_security_groups=[security_group])
     print('Launching {}'.format(instance_name))
     conn.wait_until_running([result])
@@ -140,7 +140,7 @@ def attach_ip_number(target_instance):
                 print('Allocating new Floating IP from pool: {}'.format(pool))
                 unused_floating_ip = pool.create_floating_ip()
             except (IndexError, BaseHTTPError) as e:
-                print('There are no unused Floating IP\'s found! Message: {}'.format(e))
+                print('There are no unused Floating IP\'s found!')
         if unused_floating_ip:
             conn.ex_attach_floating_ip_to_node(target_instance, unused_floating_ip)
             result = unused_floating_ip.ip_address

@@ -121,41 +121,42 @@ instance_name = config.get('Names', 'all-in-one')
 instance_exists = False
 for instance in conn.list_nodes():
     if instance.name == instance_name:
-        testing_instance = instance
+        faafo_instance = instance
         instance_exists = True
 
 if instance_exists:
-    print('Instance {} already exists. Skipping creation'.format(testing_instance.name))
+    print('Instance {} already exists. Skipping creation'.format(faafo_instance.name))
 else:
     print('Creating new instance')
-    testing_instance = conn.create_node(name=instance_name,
-                                        image=image,
-                                        size=flavor,
-                                        ex_keyname=keypair_name,
-                                        ex_userdata=userdata,
-                                        ex_security_groups=[all_in_one_security_group])
-    conn.wait_until_running([testing_instance])
+    faafo_instance = conn.create_node(name=instance_name,
+                                      image=image,
+                                      size=flavor,
+                                      ex_keyname=keypair_name,
+                                      ex_userdata=userdata,
+                                      #ex_availability_zone='melbourne',
+                                      ex_security_groups=[all_in_one_security_group])
+    conn.wait_until_running([faafo_instance])
 
 # fix for bug where by the instance isn't immediately updated with the instance data
 for instance in conn.list_nodes():
-    if instance.id == testing_instance.id:
-        testing_instance = instance
+    if instance.id == faafo_instance.id:
+        faafo_instance = instance
 
-print (testing_instance)
+print (faafo_instance)
 
 ip_address = None
 
 # Find the IP address to use
 # Default to the private IP if, there is one.
-if len(testing_instance.private_ips) > 0:
-    ip_address = testing_instance.private_ips[0]
+if len(faafo_instance.private_ips) > 0:
+    ip_address = faafo_instance.private_ips[0]
     print('Private IP is: {}'.format(ip_address))
 
 # step-14
 # But prefer the public one, if there is one.
-if len(testing_instance.public_ips) > 0:
-    ip_address = testing_instance.public_ips[0]
-    print('Instance {} already has a Public IP. Skipping attachment'.format(testing_instance.name))
+if len(faafo_instance.public_ips) > 0:
+    ip_address = faafo_instance.public_ips[0]
+    print('Instance {} already has a Public IP. Skipping attachment'.format(faafo_instance.name))
 else:
     # step-13
     print('Checking for unused Floating IP...')
@@ -172,9 +173,9 @@ else:
             print('Allocating new Floating IP from pool: {}'.format(pool))
             unused_floating_ip = pool.create_floating_ip()
         except (IndexError, BaseHTTPError) as e:
-            print('There are no unused Floating IP\'s found! Message: {}'.format(e))
+            print('There are no unused Floating IP\'s found!')
     if unused_floating_ip:
-        conn.ex_attach_floating_ip_to_node(testing_instance, unused_floating_ip)
+        conn.ex_attach_floating_ip_to_node(faafo_instance, unused_floating_ip)
         ip_address = unused_floating_ip.ip_address
 
 # step-15
