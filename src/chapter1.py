@@ -133,7 +133,7 @@ else:
                                       size=flavor,
                                       ex_keyname=keypair_name,
                                       ex_userdata=userdata,
-                                      #ex_availability_zone='melbourne',
+                                      ex_availability_zone='melbourne',
                                       ex_security_groups=[all_in_one_security_group])
     conn.wait_until_running([faafo_instance])
 
@@ -144,21 +144,20 @@ for instance in conn.list_nodes():
 
 print (faafo_instance)
 
+# step-13
 ip_address = None
-
-# Find the IP address to use
-# Default to the private IP if, there is one.
-if len(faafo_instance.private_ips) > 0:
-    ip_address = faafo_instance.private_ips[0]
-    print('Private IP is: {}'.format(ip_address))
-
-# step-14
-# But prefer the public one, if there is one.
+# Use the public address, if there is one.
 if len(faafo_instance.public_ips) > 0:
     ip_address = faafo_instance.public_ips[0]
-    print('Instance {} already has a Public IP. Skipping attachment'.format(faafo_instance.name))
-else:
-    # step-13
+    print('Instance {} has a Public IP. Skipping attachment of a floating IP'.
+          format(faafo_instance.name))
+
+# step-14
+if ip_address is None:
+    # use the the private IP as a default, if there is one.
+    if len(faafo_instance.private_ips) > 0:
+        ip_address = faafo_instance.private_ips[0]
+        print('Private IP found: {}'.format(ip_address))
     print('Checking for unused Floating IP...')
     unused_floating_ip = None
     # find the first unassigned floating ip
@@ -173,10 +172,13 @@ else:
             print('Allocating new Floating IP from pool: {}'.format(pool))
             unused_floating_ip = pool.create_floating_ip()
         except (IndexError, BaseHTTPError) as e:
-            print('There are no unused Floating IP\'s found!')
+            print('There are no Floating IP\'s found!')
     if unused_floating_ip:
         conn.ex_attach_floating_ip_to_node(faafo_instance, unused_floating_ip)
         ip_address = unused_floating_ip.ip_address
 
 # step-15
-print('The Fractals app will be deployed to http://{}'.format(ip_address))
+if ip_address is None:
+    print('Could not find an IP address to allocate to the instance!')
+else:
+    print('The Fractals app will be deployed to http://{}'.format(ip_address))
