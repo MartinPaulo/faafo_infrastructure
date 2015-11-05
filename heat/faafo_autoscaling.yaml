@@ -4,9 +4,11 @@ heat_template_version: 2014-10-16
 # This template adds the ability to autoscale the workers to chapter three's code...
 # I don't recreate the network stuff as the cloud available to me doesn't have that functionality
 
-description: |
+description: >
   A template to bring up the faafo application as an autoscaling one
-
+  NB: This template will only work if you add a security group that has http enabled to the
+  elastic_load_blancer resource! The security group attribute on the loadbalancer is only
+  supported post the current juno release.
 
 parameters:
 
@@ -152,6 +154,9 @@ resources:
       Listeners:
         - { LoadBalancerPort: '80', InstancePort: '80', Protocol: HTTP }
       HealthCheck: {Target: 'HTTP:80/', HealthyThreshold: '3', UnhealthyThreshold: '5', Interval: '30', Timeout: '5'}
+      # security groups aren't supported in Juno...
+      # SecurityGroups:
+      #  - { get_resource: security_group }
 
   server_group_api:
     type: AWS::AutoScaling::AutoScalingGroup
